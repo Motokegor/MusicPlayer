@@ -1,0 +1,313 @@
+.artistPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: black;
+
+  .artistPage-topPanel {
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+    height: 72px;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    display: flex;
+    align-items: center;
+
+    .GoBackBtn {
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    h3 {
+      color: white;
+      margin-left: 50px;
+      margin-top: 5px;
+      font-family: Avenir;
+    }
+  }
+
+  .artistPage-content {
+    width: 100%;
+
+    .artistPage-image {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .artistPage-info {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      .artistPage-buttons {
+        padding: 20px 15px 0 15px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+
+        .followArtistBtn,
+        .followArtistBtn--active {
+          position: relative;
+          outline: none;
+          font-family: Avenir;
+          cursor: pointer;
+          font-size: 14px;
+          line-height: 1;
+          border-radius: 10px;
+          transition-property: background-color, border-color, color, box-shadow,
+            filter;
+          transition-duration: 0.3s;
+          border: 1px solid rgb(124, 124, 124);
+          letter-spacing: normal;
+          white-space: normal;
+          font-weight: bold;
+          text-align: center;
+          padding: 12px 20px;
+          color: white;
+          background-color: transparent;
+        }
+
+        .followArtistBtn--active {
+          border: 1px solid white;
+        }
+
+        .album__btn-play {
+          background: #1ed760;
+          border-radius: 50%;
+          width: 56px;
+          height: 56px;
+          padding: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          padding-left: 15px;
+        }
+        .album__btn-pause {
+          background: #1ed760;
+          border-radius: 50%;
+          width: 56px;
+          height: 56px;
+          padding: 12px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+
+      .artistPage-topTracks {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 20px 0;
+
+        & button {
+          border: none;
+          background: none;
+          color: rgb(197, 197, 197);
+          font-family: Avenir;
+          font-size: 16px;
+          margin: 10px 0 0 15px;
+        }
+
+        & h1 {
+          margin-left: 15px;
+          font-family: Avenir;
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 38px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: white;
+        }
+
+        .album-tracks {
+          margin: 10px 0;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+
+          & li {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            position: relative;
+
+            & img {
+              height: 60px;
+              width: 60px;
+              display: block;
+              border-radius: 5px;
+            }
+
+            & span {
+              color: white;
+            }
+
+            .likeBtn {
+              border: none;
+              background-color: none;
+              margin: 0;
+              position: absolute;
+              z-index: 10;
+              top: 0;
+              right: 0;
+
+              .likeBtnSVG {
+                margin: 22px;
+              }
+            }
+          }
+        }
+
+        .albums {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          margin: 10px 15px 0 15px;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          gap: 10px;
+
+          & li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & span {
+              color: rgb(255, 255, 255);
+              font-family: Avenir;
+              font-weight: 600;
+              line-height: 28px;
+              width: 90%;
+              margin: 0 auto;
+              text-align: center;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+              font-size: 14px;
+            }
+          }
+        }
+      }
+
+      .artistPage-topTracks {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 20px 0;
+
+        & button {
+          border: none;
+          background: none;
+          color: rgb(197, 197, 197);
+          font-family: Avenir;
+          font-size: 16px;
+          margin: 10px 0 10px 15px;
+        }
+
+        & h1 {
+          font-family: Avenir;
+          font-size: 28px;
+          font-weight: 700;
+          line-height: 38px;
+          letter-spacing: 0em;
+          text-align: center;
+          color: white;
+        }
+
+        .tracks {
+          margin: 10px 0;
+          display: flex;
+          flex-direction: column;
+
+          & li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            & img {
+              height: 60px;
+              width: 60px;
+              display: block;
+              border-radius: 5px;
+            }
+
+            & span {
+              color: white;
+            }
+          }
+        }
+      }
+
+      .artistPage-discography {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        margin: 20px 0;
+
+        .artistPage-discographyPanel {
+          width: 100%;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 0 15px;
+
+          & button {
+            border: none;
+            background: none;
+            color: rgb(197, 197, 197);
+            font-family: Avenir;
+            font-size: 16px;
+            margin: 10px 0;
+          }
+
+          & h1 {
+            font-family: Avenir;
+            font-size: 28px;
+            font-weight: 700;
+            line-height: 38px;
+            letter-spacing: 0em;
+            text-align: center;
+            color: white;
+          }
+        }
+
+        .albums {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 100%;
+          padding: 10px 15px 10px 15px;
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+          gap: 10px;
+
+          & li {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            & span {
+              color: rgb(255, 255, 255);
+              font-family: Avenir;
+              font-size: 12px;
+              font-weight: 600;
+              line-height: 28px;
+              width: 90%;
+              margin: 0 auto;
+              text-align: center;
+              text-overflow: ellipsis;
+              white-space: nowrap;
+              overflow: hidden;
+            }
+          }
+        }
+      }
+    }
+  }
+}
